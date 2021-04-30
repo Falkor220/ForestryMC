@@ -32,7 +32,6 @@ import forestry.api.circuits.ICircuitLayout;
 import forestry.api.circuits.ICircuitSocketType;
 
 public class CircuitBoard implements ICircuitBoard {
-
 	private final EnumCircuitBoardType type;
 	@Nullable
 	private final ICircuitLayout layout;
@@ -68,18 +67,6 @@ public class CircuitBoard implements ICircuitBoard {
 				circuits[i] = circuit;
 			}
 		}
-	}
-
-	@Override
-	@OnlyIn(Dist.CLIENT)
-	public int getPrimaryColor() {
-		return type.getPrimaryColor();
-	}
-
-	@Override
-	@OnlyIn(Dist.CLIENT)
-	public int getSecondaryColor() {
-		return type.getSecondaryColor();
 	}
 
 	@Override

@@ -32,7 +32,7 @@ import forestry.core.features.CoreItems;
 import forestry.core.items.ItemForestry;
 import forestry.core.items.definitions.IColoredItem;
 
-public class ItemCircuitBoard extends ItemForestry implements IColoredItem {
+public class ItemCircuitBoard extends ItemForestry {
 
 	private final EnumCircuitBoardType type;
 
@@ -48,16 +48,6 @@ public class ItemCircuitBoard extends ItemForestry implements IColoredItem {
 	public void fillItemCategory(ItemGroup tab, NonNullList<ItemStack> subItems) {
 		if (this.allowdedIn(tab)) {
 			subItems.add(createCircuitboard(type, null, new ICircuit[]{}));
-		}
-	}
-
-	@Override
-	@OnlyIn(Dist.CLIENT)
-	public int getColorFromItemStack(ItemStack itemstack, int tintIndex) {
-		if (tintIndex == 0) {
-			return type.getPrimaryColor();
-		} else {
-			return type.getSecondaryColor();
 		}
 	}
 

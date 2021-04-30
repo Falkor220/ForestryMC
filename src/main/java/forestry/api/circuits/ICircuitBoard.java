@@ -16,12 +16,6 @@ import forestry.api.core.INbtWritable;
 
 public interface ICircuitBoard extends INbtWritable {
 	@OnlyIn(Dist.CLIENT)
-	int getPrimaryColor();
-
-	@OnlyIn(Dist.CLIENT)
-	int getSecondaryColor();
-
-	@OnlyIn(Dist.CLIENT)
 	void addTooltip(List<ITextComponent> list);
 
 	void onInsertion(Object tile);
